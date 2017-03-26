@@ -30,9 +30,9 @@ public class InterProcessMutexClient3 {
 					System.out.println("锁是否被当前JVM里某个线程持有：" + forLock.isAcquiredInThisProcess());
 					//检测锁是否被当前JVM里的线程持有，然后对应不同的撤销逻辑
 					if (forLock.isAcquiredInThisProcess()) {
-						mainThread.interrupt();
+						mainThread.interrupt();//持有锁，主线程响应中断，释放锁
 					} else {
-						mainThread.interrupt();
+						mainThread.interrupt();//不持有锁，主线程响应中断，放弃获得锁
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
