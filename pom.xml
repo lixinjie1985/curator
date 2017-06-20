@@ -20,6 +20,48 @@
   		<artifactId>curator-framework</artifactId>
   		<version>3.3.0</version>
   	</dependency>
+  	<!-- 
+  	<dependency>
+  		<groupId>org.apache.curator</groupId>
+  		<artifactId>apache-curator</artifactId>
+  		<version>3.3.0</version>
+  	</dependency>
+  	 -->
+  	<dependency>
+  		<groupId>org.apache.curator</groupId>
+  		<artifactId>curator-client</artifactId>
+  		<version>3.3.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.curator</groupId>
+  		<artifactId>curator-examples</artifactId>
+  		<version>3.3.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.curator</groupId>
+  		<artifactId>curator-test</artifactId>
+  		<version>3.3.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.curator</groupId>
+  		<artifactId>curator-x-async</artifactId>
+  		<version>3.3.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.curator</groupId>
+  		<artifactId>curator-x-discovery</artifactId>
+  		<version>3.3.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.curator</groupId>
+  		<artifactId>curator-x-discovery-server</artifactId>
+  		<version>3.3.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.curator</groupId>
+  		<artifactId>curator-x-rpc</artifactId>
+  		<version>3.3.0</version>
+  	</dependency>
   	<dependency>
   		<groupId>org.apache.curator</groupId>
   		<artifactId>curator-recipes</artifactId>
