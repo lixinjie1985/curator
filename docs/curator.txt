@@ -1,13 +1,16 @@
 What is Curator?
-apache curator是一个java客户端库用于apache zookeeper，包括高级的api框架和工具使对zookeeper的使用更加简单和可靠
+apache curator是一个java客户端库用于apache zookeeper，包括高级的api框架和工具，使对zookeeper的使用更加简单和可靠
 
 Components
 Framework
-curator框架是一个高级别的api，极大的简化了对zookeeper的使用，添加了很多特性，处理复杂的到zookeeper集群的连接管理和重试操作，简化原始zookeeper的方法和事件，提供一个现代、流式api接口
-使用CuratorFrameworkFactory类提供的工厂方法或builder方法来创建CuratorFramework类的实例，该实例是完全线程安全的，一个zookeeper集群只需共享一个这样的实例
+curator框架是一个高级别的api，极大的简化了对zookeeper的使用，添加了很多特性，处理复杂的到zookeeper集群的连接管理和重试操作，
+简化原始zookeeper的方法和事件，提供一个现代、流式api接口
+使用CuratorFrameworkFactory类提供的工厂方法或builder方法来创建CuratorFramework类的实例，该实例是完全线程安全的，
+一个zookeeper集群只需共享一个这样的实例
 使用工厂方法创建比较简单，使用builder方法创建可以控制对所有参数的设置。采用流式api，前面可以设置很多参数，最后以forPath方法结束
 一个后台操作的完成或一个watch的触发，都通过ClientListener回调接口进行通知，通过addListener()方法注册回调接口
-由于zookeeper不支持相对路径（命名空间），每次操作都必须指定全路径（从根目录开始），那么在创建客户端实例时可以指定一个命名空间namespace("MyApp")，以后的所有路径都基于该命名空间
+由于zookeeper不支持相对路径（命名空间），每次操作都必须指定全路径（从根目录开始），那么在创建客户端实例时可以指定一
+个命名空间namespace("MyApp")，以后的所有路径都基于该命名空间
 
 Client
 curator client是一个低级别的api。CuratorZookeeperClient类是一个对zookeeper java客户端的一个包装，是对zookeeper的访问更加简单和更少出错
@@ -39,7 +42,8 @@ RetryLoop.callWithRetry(client, new Callable<Void>()
       }
 });
 重试策咯RetryPolicy接口控制重试行为，只有一个方法 allowRetry接受已经重试的次数和已经过去的时间两个参数，每次重试前会调用该方法，
-允许重试则继续重试，否则抛出异常。有几种重试策略，RetryOneTime重试一次，RetryNTimes指定次数重试，RetryUntilElapsed指定时间重试，ExponentialBackoffRetry多次重试中间插入休眠 
+允许重试则继续重试，否则抛出异常。有几种重试策略，RetryOneTime重试一次，RetryNTimes指定次数重试，RetryUntilElapsed指定时间重试，
+ExponentialBackoffRetry多次重试中间插入休眠 
 
 Recipes
 curator实现了所有zookeeper的菜谱（除了两阶段提交外）
